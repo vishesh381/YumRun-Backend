@@ -4,7 +4,7 @@ FROM maven:3.8.5-openjdk-17 AS build
 WORKDIR /app
 
 # Copy only the backend/skillbridge folder to /app
-COPY "backend-spring boot/" /app/
+COPY backend-springboot/ /app/
 
 # Build the project
 RUN mvn clean package -DskipTests
