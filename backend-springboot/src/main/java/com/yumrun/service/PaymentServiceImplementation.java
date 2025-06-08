@@ -42,8 +42,8 @@ public class PaymentServiceImplementation implements PaymentService{
 	        SessionCreateParams params = SessionCreateParams.builder()
 	                .addPaymentMethodType(SessionCreateParams.PaymentMethodType.CARD)
 	                .setMode(SessionCreateParams.Mode.PAYMENT)
-	                .setSuccessUrl("http://localhost:3000/payment/success/"+order.getId())
-	                .setCancelUrl("https://yumrun-food.vercel.app/cancel")
+	                .setSuccessUrl("https://yumrun-frontend.onrender.com/payment/success/" + order.getId())
+.setCancelUrl("https://yumrun-frontend.onrender.com/payment/cancel")
 	                .addLineItem(SessionCreateParams.LineItem.builder()
 	                        .setQuantity(1L)
 	                        .setPriceData(SessionCreateParams.LineItem.PriceData.builder()
@@ -96,8 +96,7 @@ public class PaymentServiceImplementation implements PaymentService{
 			paymentLinkRequest.put("reminder_enable",true);
 
 			// Set the callback URL and method
-			paymentLinkRequest.put("callback_url","http://localhost:3000/payment/success/"+order
-					.getId());
+			paymentLinkRequest.put("callback_url", "https://yumrun-frontend.onrender.com/payment/success/" + order.getId());
 			paymentLinkRequest.put("callback_method","get");
 
 			PaymentLink payment = razorpay.paymentLink.create(paymentLinkRequest);

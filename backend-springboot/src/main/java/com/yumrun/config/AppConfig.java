@@ -48,7 +48,7 @@ public class AppConfig {
             public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
                 CorsConfiguration cfg = new CorsConfiguration();
                 cfg.setAllowedOrigins(Arrays.asList(
-                    "http://localhost:3000",
+                    "http://localhost:3000","https://yumrun-frontend.onrender.com",
                     "https://yumrun-food.vercel.app",
                     "http://localhost:4200"
                 ));
